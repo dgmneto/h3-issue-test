@@ -24,6 +24,6 @@ task wrapper(type: Wrapper) {
 docker {
     group = 'divinomenezes'
     javaApplication {
-        baseImage = 'openjdk:8-alpine'
+        baseImage = 'openjdk:8'
     }
 }
