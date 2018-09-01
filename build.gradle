@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.bmuschko.docker-java-application' version '3.6.1'
+}
+
+mainClassName = 'Main'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.uber:h3:3.0.4'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.8.1'
+}
+
+docker {
+    group = 'divinomenezes'
+    javaApplication {
+        baseImage = 'openjdk:8-alpine'
+    }
+}
